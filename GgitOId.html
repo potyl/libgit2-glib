@@ -40,7 +40,7 @@
 <div class="refsynopsisdiv">
 <a name="GgitOId.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
-#include &lt;src/ggit-oid.h&gt;
+#include &lt;libgit2-glib/ggit-oid.h&gt;
 
                     <a class="link" href="GgitOId.html#GgitOId-struct" title="GgitOId">GgitOId</a>;
 <a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           <a class="link" href="GgitOId.html#ggit-oid-copy" title="ggit_oid_copy ()">ggit_oid_copy</a>                       (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>);
@@ -136,12 +136,49 @@ needed for an oid encoded in hex (40 bytes).</td>
 <div class="refsect2">
 <a name="ggit-oid-new-from-raw"></a><h3>ggit_oid_new_from_raw ()</h3>
 <pre class="programlisting"><a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           ggit_oid_new_from_raw               (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *raw</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> from a raw oid.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>raw</code></em> :</span></p></td>
+<td>the raw input bytes to be copied.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <hr>
 <div class="refsect2">
 <a name="ggit-oid-compare"></a><h3>ggit_oid_compare ()</h3>
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                ggit_oid_compare                    (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *a</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *b</code></em>);</pre>
+<p>
+Compare two <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> structures.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>a</code></em> :</span></p></td>
+<td>first <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>b</code></em> :</span></p></td>
+<td>second <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>&lt;0, 0, &gt;0 if a &lt; b, a == b, a &gt; b.</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <hr>
 <div class="refsect2">

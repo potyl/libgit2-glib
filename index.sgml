@@ -57,6 +57,7 @@
 <ANCHOR id="GGIT-ERROR-NOMATCH:CAPS" href="libgit2-glib-1.0/libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOMATCH:CAPS">
 <ANCHOR id="GGIT-ERROR-SHORTBUFFER:CAPS" href="libgit2-glib-1.0/libgit2-glib-1.0-GgitError.html#GGIT-ERROR-SHORTBUFFER:CAPS">
 <ANCHOR id="GGIT-ERROR:CAPS" href="libgit2-glib-1.0/libgit2-glib-1.0-GgitError.html#GGIT-ERROR:CAPS">
+<ANCHOR id="ggit-error-quark" href="libgit2-glib-1.0/libgit2-glib-1.0-GgitError.html#ggit-error-quark">
 <ANCHOR id="GgitObject" href="libgit2-glib-1.0/GgitObject.html">
 <ANCHOR id="GgitObject.synopsis" href="libgit2-glib-1.0/GgitObject.html#GgitObject.synopsis">
 <ANCHOR id="GgitObject.object-hierarchy" href="libgit2-glib-1.0/GgitObject.html#GgitObject.object-hierarchy">

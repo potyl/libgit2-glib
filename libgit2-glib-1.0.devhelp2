@@ -30,6 +30,7 @@
     <keyword type="function" name="ggit_commit_get_parents ()" link="GgitCommit.html#ggit-commit-get-parents"/>
     <keyword type="enum" name="enum GgitError" link="libgit2-glib-1.0-GgitError.html#GgitError"/>
     <keyword type="macro" name="GGIT_ERROR" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR:CAPS"/>
+    <keyword type="function" name="ggit_error_quark ()" link="libgit2-glib-1.0-GgitError.html#ggit-error-quark"/>
     <keyword type="struct" name="GgitObject" link="GgitObject.html#GgitObject-struct"/>
     <keyword type="function" name="ggit_object_get_id ()" link="GgitObject.html#ggit-object-get-id"/>
     <keyword type="function" name="ggit_object_get_owner ()" link="GgitObject.html#ggit-object-get-owner"/>

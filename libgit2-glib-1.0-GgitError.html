@@ -38,10 +38,11 @@
 <div class="refsynopsisdiv">
 <a name="libgit2-glib-1.0-GgitError.synopsis"></a><h2>Synopsis</h2>
 <pre class="synopsis">
-#include &lt;src/ggit-error.h&gt;
+#include &lt;libgit2-glib/ggit-error.h&gt;
 
 enum                <a class="link" href="libgit2-glib-1.0-GgitError.html#GgitError" title="enum GgitError">GgitError</a>;
 #define             <a class="link" href="libgit2-glib-1.0-GgitError.html#GGIT-ERROR:CAPS" title="GGIT_ERROR">GGIT_ERROR</a>
+<a href="../glib/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              <a class="link" href="libgit2-glib-1.0-GgitError.html#ggit-error-quark" title="ggit_error_quark ()">ggit_error_quark</a>                    (<em class="parameter"><code><span class="type">void</span></code></em>);
 </pre>
 </div>
 <div class="refsect1">
@@ -94,7 +95,8 @@ Error codes for the <a class="link" href="libgit2-glib-1.0-GgitError.html#GGIT-E
 <tbody>
 <tr>
 <td><p><a name="GGIT-ERROR-GIT-ERROR:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_GIT_ERROR</code></span></p></td>
-<td></td>
+<td>A generic error for when an operation fails.
+</td>
 </tr>
 <tr>
 <td><p><a name="GGIT-ERROR-NOTOID:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOTOID</code></span></p></td>
@@ -264,6 +266,16 @@ GGIT_ERROR_INVALIDREFSTATE: The state of the reference is not valid.
 <a name="GGIT-ERROR:CAPS"></a><h3>GGIT_ERROR</h3>
 <pre class="programlisting">#define GGIT_ERROR ggit_error_quark ()
 </pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-error-quark"></a><h3>ggit_error_quark ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Quarks.html#GQuark"><span class="returnvalue">GQuark</span></a>              ggit_error_quark                    (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<p>
+Error domain for Ggit functions.
+Errors in this domain will be from the GgitError enumeration.
+See <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for information on error domains.
+</p>
 </div>
 </div>
 </div>
