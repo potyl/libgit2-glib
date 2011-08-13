@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitCommit</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GgitBlob.html" title="GgitBlob">
+<link rel="next" href="libgit2-glib-1.0-GgitError.html" title="GgitError">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GgitBlob.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="libgit2-glib-1.0-GgitError.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitCommit.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitCommit.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitCommit.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitCommit"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitCommit.top_of_page"></a>GgitCommit</span></h2>
+<p>GgitCommit</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitCommit.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-commit.h&gt;
+
+                    <a class="link" href="GgitCommit.html#GgitCommit-struct" title="GgitCommit">GgitCommit</a>;
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitCommit.html#ggit-commit-get-message-encoding" title="ggit_commit_get_message_encoding ()">ggit_commit_get_message_encoding</a>    (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitCommit.html#ggit-commit-get-message" title="ggit_commit_get_message ()">ggit_commit_get_message</a>             (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);
+<a href="../glib/glib-Basic-Types.html#gint64"><span class="returnvalue">gint64</span></a>              <a class="link" href="GgitCommit.html#ggit-commit-get-time" title="ggit_commit_get_time ()">ggit_commit_get_time</a>                (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);
+<a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="GgitCommit.html#ggit-commit-get-time-offset" title="ggit_commit_get_time_offset ()">ggit_commit_get_time_offset</a>         (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);
+<a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     <a class="link" href="GgitCommit.html#ggit-commit-get-committer" title="ggit_commit_get_committer ()">ggit_commit_get_committer</a>           (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);
+<a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     <a class="link" href="GgitCommit.html#ggit-commit-get-author" title="ggit_commit_get_author ()">ggit_commit_get_author</a>              (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);
+<a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             <a class="link" href="GgitCommit.html#ggit-commit-get-parents" title="ggit_commit_get_parents ()">ggit_commit_get_parents</a>             (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitCommit.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="../gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="GgitObject.html" title="GgitObject">GgitObject</a>
+         +----GgitCommit
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitCommit.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitCommit.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitCommit-struct"></a><h3>GgitCommit</h3>
+<pre class="programlisting">typedef struct _GgitCommit GgitCommit;</pre>
+<p>
+Represents a commit object.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-commit-get-message-encoding"></a><h3>ggit_commit_get_message_encoding ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_commit_get_message_encoding    (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);</pre>
+<p>
+Get the encoding for the message of a commit,
+as a string representing a standard encoding name.
+</p>
+<p>
+The encoding may be <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the 'encoding' header
+in the commit is missing; in that case UTF-8 is assumed.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the encoding of the commit message or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-commit-get-message"></a><h3>ggit_commit_get_message ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_commit_get_message             (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);</pre>
+<p>
+Gets the full message of <em class="parameter"><code>commit</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the message of the commit.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-commit-get-time"></a><h3>ggit_commit_get_time ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint64"><span class="returnvalue">gint64</span></a>              ggit_commit_get_time                (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);</pre>
+<p>
+Gets the commit time (i.e. committer time) of <em class="parameter"><code>commit</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the time of the commit.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-commit-get-time-offset"></a><h3>ggit_commit_get_time_offset ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                ggit_commit_get_time_offset         (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);</pre>
+<p>
+Gets the commit timezone offset (i.e. committer's preferred timezone)
+of <em class="parameter"><code>commit</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>positive or negative timezone offset, in minutes from UTC.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-commit-get-committer"></a><h3>ggit_commit_get_committer ()</h3>
+<pre class="programlisting"><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     ggit_commit_get_committer           (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);</pre>
+<p>
+Gets the committer of <em class="parameter"><code>commit</code></em>. The returned value must be free'd with
+<a class="link" href="GgitSignature.html#ggit-signature-free" title="ggit_signature_free ()"><code class="function">ggit_signature_free()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the committer of the commit. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-commit-get-author"></a><h3>ggit_commit_get_author ()</h3>
+<pre class="programlisting"><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     ggit_commit_get_author              (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);</pre>
+<p>
+Gets the author of <em class="parameter"><code>commit</code></em>. The returned value must be free'd with
+<a class="link" href="GgitSignature.html#ggit-signature-free" title="ggit_signature_free ()"><code class="function">ggit_signature_free()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the author of the commit. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-commit-get-parents"></a><h3>ggit_commit_get_parents ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             ggit_commit_get_parents             (<em class="parameter"><code><a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a> *commit</code></em>);</pre>
+<p>
+Gets the parents for <em class="parameter"><code>commit</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>commit</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitCommit.html" title="GgitCommit"><span class="type">GgitCommit</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the parents of the commit. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Ggit.Commit]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitRepository</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GgitOId.html" title="GgitOId">
+<link rel="next" href="GgitSignature.html" title="GgitSignature">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GgitOId.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="GgitSignature.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitRepository.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitRepository.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitRepository.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#GgitRepository.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#GgitRepository.properties" class="shortcut">Properties</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitRepository"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitRepository.top_of_page"></a>GgitRepository</span></h2>
+<p>GgitRepository</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitRepository.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-repository.h&gt;
+
+                    <a class="link" href="GgitRepository.html#GgitRepository-struct" title="GgitRepository">GgitRepository</a>;
+enum                <a class="link" href="GgitRepository.html#GgitRepositoryPathid" title="enum GgitRepositoryPathid">GgitRepositoryPathid</a>;
+<a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    <a class="link" href="GgitRepository.html#ggit-repository-open" title="ggit_repository_open ()">ggit_repository_open</a>                (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    <a class="link" href="GgitRepository.html#ggit-repository-init-repository" title="ggit_repository_init_repository ()">ggit_repository_init_repository</a>     (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> is_bare</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="GgitObject.html" title="GgitObject"><span class="returnvalue">GgitObject</span></a> *        <a class="link" href="GgitRepository.html#ggit-repository-lookup" title="ggit_repository_lookup ()">ggit_repository_lookup</a>              (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>,
+                                                         <em class="parameter"><code><a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> gtype</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="GgitRepository.html#ggit-repository-discover" title="ggit_repository_discover ()">ggit_repository_discover</a>            (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="GgitRepository.html#ggit-repository-is-head-detached" title="ggit_repository_is_head_detached ()">ggit_repository_is_head_detached</a>    (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="GgitRepository.html#ggit-repository-is-head-orphan" title="ggit_repository_is_head_orphan ()">ggit_repository_is_head_orphan</a>      (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="GgitRepository.html#ggit-repository-is-empty" title="ggit_repository_is_empty ()">ggit_repository_is_empty</a>            (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitRepository.html#ggit-repository-get-path" title="ggit_repository_get_path ()">ggit_repository_get_path</a>            (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitRepository.html#GgitRepositoryPathid" title="enum GgitRepositoryPathid"><span class="type">GgitRepositoryPathid</span></a> id</code></em>);
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="GgitRepository.html#ggit-repository-is-bare" title="ggit_repository_is_bare ()">ggit_repository_is_bare</a>             (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitRepository.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="../gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----GgitRepository
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitRepository.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+GgitRepository implements
+ <a href="../gio/GInitable.html">GInitable</a>.</p>
+</div>
+<div class="refsect1">
+<a name="GgitRepository.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="GgitRepository.html#GgitRepository--init" title='The "init" property'>init</a>"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only
+  "<a class="link" href="GgitRepository.html#GgitRepository--is-bare" title='The "is-bare" property'>is-bare</a>"                  <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only
+  "<a class="link" href="GgitRepository.html#GgitRepository--path" title='The "path" property'>path</a>"                     <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitRepository.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitRepository.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitRepository-struct"></a><h3>GgitRepository</h3>
+<pre class="programlisting">typedef struct _GgitRepository GgitRepository;</pre>
+<p>
+Represents an existing git repository including all of it's
+object contents.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GgitRepositoryPathid"></a><h3>enum GgitRepositoryPathid</h3>
+<pre class="programlisting">typedef enum
+{
+	GGIT_REPO_PATH,
+	GGIT_REPO_PATH_INDEX,
+	GGIT_REPO_PATH_ODB,
+	GGIT_REPO_PATH_WORKDIR
+} GgitRepositoryPathid;
+</pre>
+<p>
+These identify the various path ids.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="GGIT-REPO-PATH:CAPS"></a><span class="term"><code class="literal">GGIT_REPO_PATH</code></span></p></td>
+<td></td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REPO-PATH-INDEX:CAPS"></a><span class="term"><code class="literal">GGIT_REPO_PATH_INDEX</code></span></p></td>
+<td></td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REPO-PATH-ODB:CAPS"></a><span class="term"><code class="literal">GGIT_REPO_PATH_ODB</code></span></p></td>
+<td></td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REPO-PATH-WORKDIR:CAPS"></a><span class="term"><code class="literal">GGIT_REPO_PATH_WORKDIR</code></span></p></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-open"></a><h3>ggit_repository_open ()</h3>
+<pre class="programlisting"><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    ggit_repository_open                (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Open a git repository.
+</p>
+<p>
+The <em class="parameter"><code>path</code></em> must point to an existing git repository folder, e.g.
+</p>
+<p>
+	/path/to/my_repo/.git/	(normal repository)
+						objects/
+						index
+						HEAD
+</p>
+<p>
+	/path/to/bare_repo/		(bare repository)
+					objects/
+					index
+					HEAD
+</p>
+<p>
+The method will automatically detect if <em class="parameter"><code>path</code></em> is a normal
+or bare repository or fail if it is neither.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>the path to the repository.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly created <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-init-repository"></a><h3>ggit_repository_init_repository ()</h3>
+<pre class="programlisting"><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    ggit_repository_init_repository     (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> is_bare</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Creates a new git repository in the given folder.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>the path to the repository.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>is_bare</code></em> :</span></p></td>
+<td>if <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, a git repository without a working directory is created
+at the pointed path. If <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, provided path will be considered as the working
+directory into which the .git directory will be created.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly created <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-lookup"></a><h3>ggit_repository_lookup ()</h3>
+<pre class="programlisting"><a class="link" href="GgitObject.html" title="GgitObject"><span class="returnvalue">GgitObject</span></a> *        ggit_repository_lookup              (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>,
+                                                         <em class="parameter"><code><a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a> gtype</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Lookups a reference to one of the objects in the <em class="parameter"><code>repository</code></em>.
+</p>
+<p>
+The generated reference must be freed with <a href="../gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>.
+</p>
+<p>
+The <em class="parameter"><code>gtype</code></em> must match the type of the object
+in the odb; the method will fail otherwise.
+The special value <a href="../gobject/gobject-Type-Information.html#G-TYPE-NONE:CAPS"><code class="literal">G_TYPE_NONE</code></a> may be passed to let
+the method guess the object's type.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>repository</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>oid</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gtype</code></em> :</span></p></td>
+<td>a <a href="../gobject/gobject-Type-Information.html#GType"><span class="type">GType</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the found <a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-discover"></a><h3>ggit_repository_discover ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             ggit_repository_discover            (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Looks for a git repository.
+</p>
+<p>
+The lookup starts from <em class="parameter"><code>path</code></em> and walks up the parent directories
+and stops when a repository is found.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>path</code></em> :</span></p></td>
+<td>the base path where the lookup starts.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the repository path. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-is-head-detached"></a><h3>ggit_repository_is_head_detached ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            ggit_repository_is_head_detached    (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Checks if <em class="parameter"><code>repository</code></em>'s HEAD is detached.
+</p>
+<p>
+A repository's HEAD is detached when it points directly to a commit
+instead of a branch.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>repository</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if HEAD is detached.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-is-head-orphan"></a><h3>ggit_repository_is_head_orphan ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            ggit_repository_is_head_orphan      (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Checks if <em class="parameter"><code>repository</code></em>'s HEAD is an orphan.
+</p>
+<p>
+An orphan branch is one named from HEAD but doesn't exist in
+the refs namespace, because it doesn't have any commit to point to.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>repository</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the current branch is an orphan.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-is-empty"></a><h3>ggit_repository_is_empty ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            ggit_repository_is_empty            (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Checks if <em class="parameter"><code>repository</code></em> is empty.
+</p>
+<p>
+An empty repository has just been initialized and contains
+no commits.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>repository</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the repository is empty.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-get-path"></a><h3>ggit_repository_get_path ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_repository_get_path            (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitRepository.html#GgitRepositoryPathid" title="enum GgitRepositoryPathid"><span class="type">GgitRepositoryPathid</span></a> id</code></em>);</pre>
+<p>
+Gets one of the paths to the repository.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>repository</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>id</code></em> :</span></p></td>
+<td>the <a class="link" href="GgitRepository.html#GgitRepositoryPathid" title="enum GgitRepositoryPathid"><span class="type">GgitRepositoryPathid</span></a> of the path to return.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the absolute path of the requested <a class="link" href="GgitRepository.html#GgitRepositoryPathid" title="enum GgitRepositoryPathid"><span class="type">GgitRepositoryPathid</span></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-repository-is-bare"></a><h3>ggit_repository_is_bare ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            ggit_repository_is_bare             (<em class="parameter"><code><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> *repository</code></em>);</pre>
+<p>
+Checks if <em class="parameter"><code>repository</code></em> is bare.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>repository</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+<a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the repository is empty.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1">
+<a name="GgitRepository.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="GgitRepository--init"></a><h3>The <code class="literal">"init"</code> property</h3>
+<pre class="programlisting">  "init"                     <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only</pre>
+<p>Whether to initialize a repository.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GgitRepository--is-bare"></a><h3>The <code class="literal">"is-bare"</code> property</h3>
+<pre class="programlisting">  "is-bare"                  <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write / Construct Only</pre>
+<p>Is a bare repository.</p>
+<p>Default value: FALSE</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GgitRepository--path"></a><h3>The <code class="literal">"path"</code> property</h3>
+<pre class="programlisting">  "path"                     <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
+<p>The path to the repository.</p>
+<p>Default value: NULL</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitSignature</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GgitRepository.html" title="GgitRepository">
+<link rel="next" href="GgitTag.html" title="GgitTag">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GgitRepository.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="GgitTag.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitSignature.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitSignature.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitSignature.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitSignature"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitSignature.top_of_page"></a>GgitSignature</span></h2>
+<p>GgitSignature</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitSignature.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-signature.h&gt;
+
+                    <a class="link" href="GgitSignature.html#GgitSignature-struct" title="GgitSignature">GgitSignature</a>;
+<a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     <a class="link" href="GgitSignature.html#ggit-signature-new" title="ggit_signature_new ()">ggit_signature_new</a>                  (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *email</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gint64"><span class="type">gint64</span></a> signature_time</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> signature_offset</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     <a class="link" href="GgitSignature.html#ggit-signature-new-now" title="ggit_signature_new_now ()">ggit_signature_new_now</a>              (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *email</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     <a class="link" href="GgitSignature.html#ggit-signature-copy" title="ggit_signature_copy ()">ggit_signature_copy</a>                 (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GgitSignature.html#ggit-signature-free" title="ggit_signature_free ()">ggit_signature_free</a>                 (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitSignature.html#ggit-signature-get-name" title="ggit_signature_get_name ()">ggit_signature_get_name</a>             (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitSignature.html#ggit-signature-get-email" title="ggit_signature_get_email ()">ggit_signature_get_email</a>            (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);
+<a href="../glib/glib-Basic-Types.html#gint64"><span class="returnvalue">gint64</span></a>              <a class="link" href="GgitSignature.html#ggit-signature-get-time" title="ggit_signature_get_time ()">ggit_signature_get_time</a>             (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);
+<a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="GgitSignature.html#ggit-signature-get-time-offset" title="ggit_signature_get_time_offset ()">ggit_signature_get_time_offset</a>      (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitSignature.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GBoxed
+   +----GgitSignature
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitSignature.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitSignature.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitSignature-struct"></a><h3>GgitSignature</h3>
+<pre class="programlisting">typedef struct _GgitSignature GgitSignature;</pre>
+<p>
+Represents an action signature.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-new"></a><h3>ggit_signature_new ()</h3>
+<pre class="programlisting"><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     ggit_signature_new                  (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *email</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gint64"><span class="type">gint64</span></a> signature_time</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gint"><span class="type">gint</span></a> signature_offset</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the person.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>email</code></em> :</span></p></td>
+<td>the email of the person.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature_time</code></em> :</span></p></td>
+<td>the time when the action happened.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature_offset</code></em> :</span></p></td>
+<td>the timezone offset in minutes for the time.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-new-now"></a><h3>ggit_signature_new_now ()</h3>
+<pre class="programlisting"><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     ggit_signature_new_now              (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *email</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Creates a new <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> with a timestamp of 'now'.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em> :</span></p></td>
+<td>the name of the person.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>email</code></em> :</span></p></td>
+<td>the email of the person.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-copy"></a><h3>ggit_signature_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     ggit_signature_copy                 (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);</pre>
+<p>
+Creates a copy of <em class="parameter"><code>signature</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-free"></a><h3>ggit_signature_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                ggit_signature_free                 (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);</pre>
+<p>
+Frees <em class="parameter"><code>signature</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-get-name"></a><h3>ggit_signature_get_name ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_signature_get_name             (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);</pre>
+<p>
+Gets the name of the person.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the name of the person.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-get-email"></a><h3>ggit_signature_get_email ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_signature_get_email            (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);</pre>
+<p>
+Gets the email of the person.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the email of the person.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-get-time"></a><h3>ggit_signature_get_time ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint64"><span class="returnvalue">gint64</span></a>              ggit_signature_get_time             (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);</pre>
+<p>
+Gets the time when the action happened.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the time when the action happened.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-signature-get-time-offset"></a><h3>ggit_signature_get_time_offset ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                ggit_signature_get_time_offset      (<em class="parameter"><code><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a> *signature</code></em>);</pre>
+<p>
+Gets the timezone offset in minutes for the time.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>signature</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitSignature.html" title="GgitSignature"><span class="type">GgitSignature</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the timezone offset in minutes for the time.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

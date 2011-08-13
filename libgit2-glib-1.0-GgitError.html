@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitError</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GgitCommit.html" title="GgitCommit">
+<link rel="next" href="GgitObject.html" title="GgitObject">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GgitCommit.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="GgitObject.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#libgit2-glib-1.0-GgitError.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#libgit2-glib-1.0-GgitError.description" class="shortcut">Description</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="libgit2-glib-1.0-GgitError"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="libgit2-glib-1.0-GgitError.top_of_page"></a>GgitError</span></h2>
+<p>GgitError</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="libgit2-glib-1.0-GgitError.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-error.h&gt;
+
+enum                <a class="link" href="libgit2-glib-1.0-GgitError.html#GgitError" title="enum GgitError">GgitError</a>;
+#define             <a class="link" href="libgit2-glib-1.0-GgitError.html#GGIT-ERROR:CAPS" title="GGIT_ERROR">GGIT_ERROR</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="libgit2-glib-1.0-GgitError.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="libgit2-glib-1.0-GgitError.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitError"></a><h3>enum GgitError</h3>
+<pre class="programlisting">typedef enum {
+	GGIT_ERROR_GIT_ERROR = -1,
+	GGIT_ERROR_NOTOID = -2,
+	GGIT_ERROR_NOTFOUND = -3,
+	GGIT_ERROR_NOMEM = -4,
+	GGIT_ERROR_OSERR = -5,
+	GGIT_ERROR_OBJTYPE = -6,
+	GGIT_ERROR_NOTAREPO = -7,
+	GGIT_ERROR_INVALIDTYPE = -8,
+	GGIT_ERROR_MISSINGOBJDATA = -9,
+	GGIT_ERROR_PACKCORRUPTED = -10,
+	GGIT_ERROR_FLOCKFAIL = -11,
+	GGIT_ERROR_ZLIB = -12,
+	GGIT_ERROR_BUSY = -13,
+	GGIT_ERROR_BAREINDEX = -14,
+	GGIT_ERROR_INVALIDREFNAME = -15,
+	GGIT_ERROR_REFCORRUPTED  = -16,
+	GGIT_ERROR_TOONESTEDSYMREF = -17,
+	GGIT_ERROR_PACKEDREFSCORRUPTED = -18,
+	GGIT_ERROR_INVALIDPATH = -19,
+	GGIT_ERROR_REVWALKOVER = -20,
+	GGIT_ERROR_INVALIDREFSTATE = -21,
+	GGIT_ERROR_NOTIMPLEMENTED = -22,
+	GGIT_ERROR_EXISTS = -23,
+	GGIT_ERROR_OVERFLOW = -24,
+	GGIT_ERROR_NOTNUM = -25,
+	GGIT_ERROR_STREAM = -26,
+	GGIT_ERROR_INVALIDARGS = -27,
+	GGIT_ERROR_OBJCORRUPTED = -28,
+	GGIT_ERROR_AMBIGUOUSOIDPREFIX = -29,
+	GGIT_ERROR_PASSTHROUGH = -30,
+	GGIT_ERROR_NOMATCH = -31,
+	GGIT_ERROR_SHORTBUFFER = -32
+} GgitError;
+</pre>
+<p>
+Error codes for the <a class="link" href="libgit2-glib-1.0-GgitError.html#GGIT-ERROR:CAPS" title="GGIT_ERROR"><code class="literal">GGIT_ERROR</code></a> error domain.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="GGIT-ERROR-GIT-ERROR:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_GIT_ERROR</code></span></p></td>
+<td></td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-NOTOID:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOTOID</code></span></p></td>
+<td>Input was not a properly formatted Git object id.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-NOTFOUND:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOTFOUND</code></span></p></td>
+<td>Input does not exist in the scope searched.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-NOMEM:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOMEM</code></span></p></td>
+<td>Not enough space available.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-OSERR:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_OSERR</code></span></p></td>
+<td>Consult the OS error information.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-OBJTYPE:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_OBJTYPE</code></span></p></td>
+<td>The specified object is of invalid type.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-NOTAREPO:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOTAREPO</code></span></p></td>
+<td>The specified repository is invalid.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-INVALIDTYPE:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_INVALIDTYPE</code></span></p></td>
+<td>The object type is invalid or doesn't match.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-MISSINGOBJDATA:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_MISSINGOBJDATA</code></span></p></td>
+<td>The object cannot be written because it's
+                            missing internal data.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-PACKCORRUPTED:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_PACKCORRUPTED</code></span></p></td>
+<td>The packfile for the ODB is corrupted.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-FLOCKFAIL:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_FLOCKFAIL</code></span></p></td>
+<td>Failed to acquire or release a file lock.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-ZLIB:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_ZLIB</code></span></p></td>
+<td>The Z library failed to inflate/deflate an object's data.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-BUSY:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_BUSY</code></span></p></td>
+<td>The queried object is currently busy.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-BAREINDEX:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_BAREINDEX</code></span></p></td>
+<td>The index file is not backed up by an
+                       existing repository.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-INVALIDREFNAME:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_INVALIDREFNAME</code></span></p></td>
+<td>The name of the reference is not valid.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-REFCORRUPTED:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_REFCORRUPTED</code></span></p></td>
+<td>The specified reference has its data corrupted.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-TOONESTEDSYMREF:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_TOONESTEDSYMREF</code></span></p></td>
+<td>The specified symbolic reference is
+                             too deeply nested.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-PACKEDREFSCORRUPTED:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_PACKEDREFSCORRUPTED</code></span></p></td>
+<td>The pack-refs file is either corrupted or
+                                 its format is not currently supported.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-INVALIDPATH:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_INVALIDPATH</code></span></p></td>
+<td>The path is invalid.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-REVWALKOVER:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_REVWALKOVER</code></span></p></td>
+<td>The revision walker is empty; there
+                         are no more commits left to iterate.
+GGIT_ERROR_INVALIDREFSTATE: The state of the reference is not valid.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-INVALIDREFSTATE:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_INVALIDREFSTATE</code></span></p></td>
+<td></td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-NOTIMPLEMENTED:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOTIMPLEMENTED</code></span></p></td>
+<td>This feature has not been implemented yet.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-EXISTS:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_EXISTS</code></span></p></td>
+<td>A reference with this name already exists.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-OVERFLOW:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_OVERFLOW</code></span></p></td>
+<td>The given integer literal is too large to be parsed.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-NOTNUM:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOTNUM</code></span></p></td>
+<td>The given literal is not a valid number.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-STREAM:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_STREAM</code></span></p></td>
+<td>Streaming error.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-INVALIDARGS:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_INVALIDARGS</code></span></p></td>
+<td>invalid arguments to function.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-OBJCORRUPTED:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_OBJCORRUPTED</code></span></p></td>
+<td>The specified object has its data corrupted.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-AMBIGUOUSOIDPREFIX:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_AMBIGUOUSOIDPREFIX</code></span></p></td>
+<td>The given short oid is ambiguous.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-PASSTHROUGH:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_PASSTHROUGH</code></span></p></td>
+<td>Skip and passthrough the given ODB backend
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-NOMATCH:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_NOMATCH</code></span></p></td>
+<td>The path pattern and string did not match.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-ERROR-SHORTBUFFER:CAPS"></a><span class="term"><code class="literal">GGIT_ERROR_SHORTBUFFER</code></span></p></td>
+<td>The buffer is too short to satisfy the request.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GGIT-ERROR:CAPS"></a><h3>GGIT_ERROR</h3>
+<pre class="programlisting">#define GGIT_ERROR ggit_error_quark ()
+</pre>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

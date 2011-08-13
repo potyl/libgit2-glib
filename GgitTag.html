@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitTag</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GgitSignature.html" title="GgitSignature">
+<link rel="next" href="api-index-full.html" title="Index of all symbols">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GgitSignature.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitTag.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitTag.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitTag.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitTag"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitTag.top_of_page"></a>GgitTag</span></h2>
+<p>GgitTag</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitTag.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-tag.h&gt;
+
+                    <a class="link" href="GgitTag.html#GgitTag-struct" title="GgitTag">GgitTag</a>;
+<a class="link" href="GgitObject.html" title="GgitObject"><span class="returnvalue">GgitObject</span></a> *        <a class="link" href="GgitTag.html#ggit-tag-get-target" title="ggit_tag_get_target ()">ggit_tag_get_target</a>                 (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           <a class="link" href="GgitTag.html#ggit-tag-get-target-oid" title="ggit_tag_get_target_oid ()">ggit_tag_get_target_oid</a>             (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitTag.html#ggit-tag-get-name" title="ggit_tag_get_name ()">ggit_tag_get_name</a>                   (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);
+<a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     <a class="link" href="GgitTag.html#ggit-tag-get-tagger" title="ggit_tag_get_tagger ()">ggit_tag_get_tagger</a>                 (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitTag.html#ggit-tag-get-message" title="ggit_tag_get_message ()">ggit_tag_get_message</a>                (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitTag.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="../gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="GgitObject.html" title="GgitObject">GgitObject</a>
+         +----GgitTag
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitTag.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitTag.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitTag-struct"></a><h3>GgitTag</h3>
+<pre class="programlisting">typedef struct _GgitTag GgitTag;</pre>
+<p>
+Represents a tag object.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-tag-get-target"></a><h3>ggit_tag_get_target ()</h3>
+<pre class="programlisting"><a class="link" href="GgitObject.html" title="GgitObject"><span class="returnvalue">GgitObject</span></a> *        ggit_tag_get_target                 (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Gets the target <a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a> of <em class="parameter"><code>tag</code></em>.
+</p>
+<p>
+This method performs a repository lookup for the
+given object and returns it.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the target <a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a> of the tag. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-tag-get-target-oid"></a><h3>ggit_tag_get_target_oid ()</h3>
+<pre class="programlisting"><a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           ggit_tag_get_target_oid             (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);</pre>
+<p>
+Gets the target <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> of <em class="parameter"><code>tag</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the target <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> of the tag. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-tag-get-name"></a><h3>ggit_tag_get_name ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_tag_get_name                   (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);</pre>
+<p>
+Gets the name of <em class="parameter"><code>tag</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the name of the tag.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-tag-get-tagger"></a><h3>ggit_tag_get_tagger ()</h3>
+<pre class="programlisting"><a class="link" href="GgitSignature.html" title="GgitSignature"><span class="returnvalue">GgitSignature</span></a> *     ggit_tag_get_tagger                 (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);</pre>
+<p>
+Get the tagger (author) of <em class="parameter"><code>tag</code></em>. The returned value must be free with
+<a class="link" href="GgitSignature.html#ggit-signature-free" title="ggit_signature_free ()"><code class="function">ggit_signature_free()</code></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the tagger (author) of the tag. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-tag-get-message"></a><h3>ggit_tag_get_message ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_tag_get_message                (<em class="parameter"><code><a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a> *tag</code></em>);</pre>
+<p>
+Gets the message of <em class="parameter"><code>tag</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>tag</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitTag.html" title="GgitTag"><span class="type">GgitTag</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the message of the tag.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="libgit2-glib Reference Manual" link="index.html" author="" name="libgit2-glib-1.0" version="2" language="c">
+  <chapters>
+    <sub name="API reference" link="rn01.html">
+      <sub name="GgitBlob" link="GgitBlob.html"/>
+      <sub name="GgitCommit" link="GgitCommit.html"/>
+      <sub name="GgitError" link="libgit2-glib-1.0-GgitError.html"/>
+      <sub name="GgitObject" link="GgitObject.html"/>
+      <sub name="GgitOId" link="GgitOId.html"/>
+      <sub name="GgitRepository" link="GgitRepository.html"/>
+      <sub name="GgitSignature" link="GgitSignature.html"/>
+      <sub name="GgitTag" link="GgitTag.html"/>
+    </sub>
+    <sub name="Index of all symbols" link="api-index-full.html"/>
+    <sub name="Index of deprecated symbols" link="api-index-deprecated.html"/>
+    <sub name="Annotation Glossary" link="annotation-glossary.html"/>
+  </chapters>
+  <functions>
+    <keyword type="struct" name="GgitBlob" link="GgitBlob.html#GgitBlob-struct"/>
+    <keyword type="function" name="ggit_blob_get_raw_content ()" link="GgitBlob.html#ggit-blob-get-raw-content"/>
+    <keyword type="function" name="ggit_blob_get_raw_size ()" link="GgitBlob.html#ggit-blob-get-raw-size"/>
+    <keyword type="struct" name="GgitCommit" link="GgitCommit.html#GgitCommit-struct"/>
+    <keyword type="function" name="ggit_commit_get_message_encoding ()" link="GgitCommit.html#ggit-commit-get-message-encoding"/>
+    <keyword type="function" name="ggit_commit_get_message ()" link="GgitCommit.html#ggit-commit-get-message"/>
+    <keyword type="function" name="ggit_commit_get_time ()" link="GgitCommit.html#ggit-commit-get-time"/>
+    <keyword type="function" name="ggit_commit_get_time_offset ()" link="GgitCommit.html#ggit-commit-get-time-offset"/>
+    <keyword type="function" name="ggit_commit_get_committer ()" link="GgitCommit.html#ggit-commit-get-committer"/>
+    <keyword type="function" name="ggit_commit_get_author ()" link="GgitCommit.html#ggit-commit-get-author"/>
+    <keyword type="function" name="ggit_commit_get_parents ()" link="GgitCommit.html#ggit-commit-get-parents"/>
+    <keyword type="enum" name="enum GgitError" link="libgit2-glib-1.0-GgitError.html#GgitError"/>
+    <keyword type="macro" name="GGIT_ERROR" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR:CAPS"/>
+    <keyword type="struct" name="GgitObject" link="GgitObject.html#GgitObject-struct"/>
+    <keyword type="function" name="ggit_object_get_id ()" link="GgitObject.html#ggit-object-get-id"/>
+    <keyword type="function" name="ggit_object_get_owner ()" link="GgitObject.html#ggit-object-get-owner"/>
+    <keyword type="struct" name="GgitOId" link="GgitOId.html#GgitOId-struct"/>
+    <keyword type="function" name="ggit_oid_copy ()" link="GgitOId.html#ggit-oid-copy"/>
+    <keyword type="function" name="ggit_oid_free ()" link="GgitOId.html#ggit-oid-free"/>
+    <keyword type="function" name="ggit_oid_new_from_string ()" link="GgitOId.html#ggit-oid-new-from-string"/>
+    <keyword type="function" name="ggit_oid_new_from_raw ()" link="GgitOId.html#ggit-oid-new-from-raw"/>
+    <keyword type="function" name="ggit_oid_compare ()" link="GgitOId.html#ggit-oid-compare"/>
+    <keyword type="function" name="ggit_oid_to_string ()" link="GgitOId.html#ggit-oid-to-string"/>
+    <keyword type="struct" name="GgitRepository" link="GgitRepository.html#GgitRepository-struct"/>
+    <keyword type="enum" name="enum GgitRepositoryPathid" link="GgitRepository.html#GgitRepositoryPathid"/>
+    <keyword type="function" name="ggit_repository_open ()" link="GgitRepository.html#ggit-repository-open"/>
+    <keyword type="function" name="ggit_repository_init_repository ()" link="GgitRepository.html#ggit-repository-init-repository"/>
+    <keyword type="function" name="ggit_repository_lookup ()" link="GgitRepository.html#ggit-repository-lookup"/>
+    <keyword type="function" name="ggit_repository_discover ()" link="GgitRepository.html#ggit-repository-discover"/>
+    <keyword type="function" name="ggit_repository_is_head_detached ()" link="GgitRepository.html#ggit-repository-is-head-detached"/>
+    <keyword type="function" name="ggit_repository_is_head_orphan ()" link="GgitRepository.html#ggit-repository-is-head-orphan"/>
+    <keyword type="function" name="ggit_repository_is_empty ()" link="GgitRepository.html#ggit-repository-is-empty"/>
+    <keyword type="function" name="ggit_repository_get_path ()" link="GgitRepository.html#ggit-repository-get-path"/>
+    <keyword type="function" name="ggit_repository_is_bare ()" link="GgitRepository.html#ggit-repository-is-bare"/>
+    <keyword type="property" name="The &quot;init&quot; property" link="GgitRepository.html#GgitRepository--init"/>
+    <keyword type="property" name="The &quot;is-bare&quot; property" link="GgitRepository.html#GgitRepository--is-bare"/>
+    <keyword type="property" name="The &quot;path&quot; property" link="GgitRepository.html#GgitRepository--path"/>
+    <keyword type="struct" name="GgitSignature" link="GgitSignature.html#GgitSignature-struct"/>
+    <keyword type="function" name="ggit_signature_new ()" link="GgitSignature.html#ggit-signature-new"/>
+    <keyword type="function" name="ggit_signature_new_now ()" link="GgitSignature.html#ggit-signature-new-now"/>
+    <keyword type="function" name="ggit_signature_copy ()" link="GgitSignature.html#ggit-signature-copy"/>
+    <keyword type="function" name="ggit_signature_free ()" link="GgitSignature.html#ggit-signature-free"/>
+    <keyword type="function" name="ggit_signature_get_name ()" link="GgitSignature.html#ggit-signature-get-name"/>
+    <keyword type="function" name="ggit_signature_get_email ()" link="GgitSignature.html#ggit-signature-get-email"/>
+    <keyword type="function" name="ggit_signature_get_time ()" link="GgitSignature.html#ggit-signature-get-time"/>
+    <keyword type="function" name="ggit_signature_get_time_offset ()" link="GgitSignature.html#ggit-signature-get-time-offset"/>
+    <keyword type="struct" name="GgitTag" link="GgitTag.html#GgitTag-struct"/>
+    <keyword type="function" name="ggit_tag_get_target ()" link="GgitTag.html#ggit-tag-get-target"/>
+    <keyword type="function" name="ggit_tag_get_target_oid ()" link="GgitTag.html#ggit-tag-get-target-oid"/>
+    <keyword type="function" name="ggit_tag_get_name ()" link="GgitTag.html#ggit-tag-get-name"/>
+    <keyword type="function" name="ggit_tag_get_tagger ()" link="GgitTag.html#ggit-tag-get-tagger"/>
+    <keyword type="function" name="ggit_tag_get_message ()" link="GgitTag.html#ggit-tag-get-message"/>
+    <keyword type="constant" name="GGIT_ERROR_GIT_ERROR" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-GIT-ERROR:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_NOTOID" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOTOID:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_NOTFOUND" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOTFOUND:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_NOMEM" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOMEM:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_OSERR" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-OSERR:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_OBJTYPE" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-OBJTYPE:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_NOTAREPO" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOTAREPO:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_INVALIDTYPE" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-INVALIDTYPE:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_MISSINGOBJDATA" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-MISSINGOBJDATA:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_PACKCORRUPTED" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-PACKCORRUPTED:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_FLOCKFAIL" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-FLOCKFAIL:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_ZLIB" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-ZLIB:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_BUSY" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-BUSY:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_BAREINDEX" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-BAREINDEX:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_INVALIDREFNAME" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-INVALIDREFNAME:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_REFCORRUPTED" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-REFCORRUPTED:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_TOONESTEDSYMREF" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-TOONESTEDSYMREF:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_PACKEDREFSCORRUPTED" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-PACKEDREFSCORRUPTED:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_INVALIDPATH" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-INVALIDPATH:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_REVWALKOVER" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-REVWALKOVER:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_INVALIDREFSTATE" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-INVALIDREFSTATE:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_NOTIMPLEMENTED" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOTIMPLEMENTED:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_EXISTS" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-EXISTS:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_OVERFLOW" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-OVERFLOW:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_NOTNUM" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOTNUM:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_STREAM" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-STREAM:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_INVALIDARGS" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-INVALIDARGS:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_OBJCORRUPTED" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-OBJCORRUPTED:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_AMBIGUOUSOIDPREFIX" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-AMBIGUOUSOIDPREFIX:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_PASSTHROUGH" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-PASSTHROUGH:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_NOMATCH" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOMATCH:CAPS"/>
+    <keyword type="constant" name="GGIT_ERROR_SHORTBUFFER" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-SHORTBUFFER:CAPS"/>
+    <keyword type="constant" name="GGIT_REPO_PATH" link="GgitRepository.html#GGIT-REPO-PATH:CAPS"/>
+    <keyword type="constant" name="GGIT_REPO_PATH_INDEX" link="GgitRepository.html#GGIT-REPO-PATH-INDEX:CAPS"/>
+    <keyword type="constant" name="GGIT_REPO_PATH_ODB" link="GgitRepository.html#GGIT-REPO-PATH-ODB:CAPS"/>
+    <keyword type="constant" name="GGIT_REPO_PATH_WORKDIR" link="GgitRepository.html#GGIT-REPO-PATH-WORKDIR:CAPS"/>
+  </functions>
+</book>

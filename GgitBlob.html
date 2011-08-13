@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitBlob</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="rn01.html" title="API reference">
+<link rel="next" href="GgitCommit.html" title="GgitCommit">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rn01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="GgitCommit.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitBlob.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitBlob.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitBlob.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitBlob"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitBlob.top_of_page"></a>GgitBlob</span></h2>
+<p>GgitBlob</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitBlob.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-blob.h&gt;
+
+                    <a class="link" href="GgitBlob.html#GgitBlob-struct" title="GgitBlob">GgitBlob</a>;
+<a href="../glib/glib-Basic-Types.html#gconstpointer"><span class="returnvalue">gconstpointer</span></a>       <a class="link" href="GgitBlob.html#ggit-blob-get-raw-content" title="ggit_blob_get_raw_content ()">ggit_blob_get_raw_content</a>           (<em class="parameter"><code><a class="link" href="GgitBlob.html" title="GgitBlob"><span class="type">GgitBlob</span></a> *blob</code></em>);
+<a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="GgitBlob.html#ggit-blob-get-raw-size" title="ggit_blob_get_raw_size ()">ggit_blob_get_raw_size</a>              (<em class="parameter"><code><a class="link" href="GgitBlob.html" title="GgitBlob"><span class="type">GgitBlob</span></a> *blob</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitBlob.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="../gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----<a class="link" href="GgitObject.html" title="GgitObject">GgitObject</a>
+         +----GgitBlob
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitBlob.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitBlob.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitBlob-struct"></a><h3>GgitBlob</h3>
+<pre class="programlisting">typedef struct _GgitBlob GgitBlob;</pre>
+<p>
+Represents a blob object.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-blob-get-raw-content"></a><h3>ggit_blob_get_raw_content ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gconstpointer"><span class="returnvalue">gconstpointer</span></a>       ggit_blob_get_raw_content           (<em class="parameter"><code><a class="link" href="GgitBlob.html" title="GgitBlob"><span class="type">GgitBlob</span></a> *blob</code></em>);</pre>
+<p>
+Gets a read-only buffer with the raw contents of <em class="parameter"><code>blob</code></em>.
+</p>
+<p>
+A pointer to the raw contents of <em class="parameter"><code>blob</code></em> is returned.
+This pointer is owned internally by <em class="parameter"><code>object</code></em> and must
+not be free'd. The pointer may be invalidated at a later
+time.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>blob</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitBlob.html" title="GgitBlob"><span class="type">GgitBlob</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the contents or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>blob</code></em> has no contents. <span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-blob-get-raw-size"></a><h3>ggit_blob_get_raw_size ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                ggit_blob_get_raw_size              (<em class="parameter"><code><a class="link" href="GgitBlob.html" title="GgitBlob"><span class="type">GgitBlob</span></a> *blob</code></em>);</pre>
+<p>
+Gets the size in bytes of the contents of <em class="parameter"><code>blob</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>blob</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitBlob.html" title="GgitBlob"><span class="type">GgitBlob</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the size in bytes.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

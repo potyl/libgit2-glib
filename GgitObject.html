@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitObject</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="libgit2-glib-1.0-GgitError.html" title="GgitError">
+<link rel="next" href="GgitOId.html" title="GgitOId">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="libgit2-glib-1.0-GgitError.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="GgitOId.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitObject.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitObject.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitObject.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitObject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitObject.top_of_page"></a>GgitObject</span></h2>
+<p>GgitObject</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitObject.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-object.h&gt;
+
+                    <a class="link" href="GgitObject.html#GgitObject-struct" title="GgitObject">GgitObject</a>;
+<a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           <a class="link" href="GgitObject.html#ggit-object-get-id" title="ggit_object_get_id ()">ggit_object_get_id</a>                  (<em class="parameter"><code><a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a> *object</code></em>);
+<a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    <a class="link" href="GgitObject.html#ggit-object-get-owner" title="ggit_object_get_owner ()">ggit_object_get_owner</a>               (<em class="parameter"><code><a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a> *object</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitObject.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  <a href="../gobject/gobject-The-Base-Object-Type.html#GObject">GObject</a>
+   +----GgitObject
+         +----<a class="link" href="GgitBlob.html" title="GgitBlob">GgitBlob</a>
+         +----<a class="link" href="GgitCommit.html" title="GgitCommit">GgitCommit</a>
+         +----<a class="link" href="GgitTag.html" title="GgitTag">GgitTag</a>
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitObject.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitObject.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitObject-struct"></a><h3>GgitObject</h3>
+<pre class="programlisting">typedef struct _GgitObject GgitObject;</pre>
+<p>
+Represents a generic object in a repository.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-object-get-id"></a><h3>ggit_object_get_id ()</h3>
+<pre class="programlisting"><a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           ggit_object_get_id                  (<em class="parameter"><code><a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a> *object</code></em>);</pre>
+<p>
+Gets the <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> of <em class="parameter"><code>object</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> of the object. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-object-get-owner"></a><h3>ggit_object_get_owner ()</h3>
+<pre class="programlisting"><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    ggit_object_get_owner               (<em class="parameter"><code><a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a> *object</code></em>);</pre>
+<p>
+Gets the <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> that owns <em class="parameter"><code>object</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitObject.html" title="GgitObject"><span class="type">GgitObject</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the <a class="link" href="GgitRepository.html" title="GgitRepository"><span class="type">GgitRepository</span></a> that owns this object.
+The returned value must be free'd calling <a href="../gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>

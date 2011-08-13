@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitOId</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GgitObject.html" title="GgitObject">
+<link rel="next" href="GgitRepository.html" title="GgitRepository">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GgitObject.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="GgitRepository.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitOId.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitOId.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitOId.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitOId"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitOId.top_of_page"></a>GgitOId</span></h2>
+<p>GgitOId</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitOId.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;src/ggit-oid.h&gt;
+
+                    <a class="link" href="GgitOId.html#GgitOId-struct" title="GgitOId">GgitOId</a>;
+<a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           <a class="link" href="GgitOId.html#ggit-oid-copy" title="ggit_oid_copy ()">ggit_oid_copy</a>                       (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GgitOId.html#ggit-oid-free" title="ggit_oid_free ()">ggit_oid_free</a>                       (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>);
+<a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           <a class="link" href="GgitOId.html#ggit-oid-new-from-string" title="ggit_oid_new_from_string ()">ggit_oid_new_from_string</a>            (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);
+<a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           <a class="link" href="GgitOId.html#ggit-oid-new-from-raw" title="ggit_oid_new_from_raw ()">ggit_oid_new_from_raw</a>               (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *raw</code></em>);
+<a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="GgitOId.html#ggit-oid-compare" title="ggit_oid_compare ()">ggit_oid_compare</a>                    (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *b</code></em>);
+<a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             <a class="link" href="GgitOId.html#ggit-oid-to-string" title="ggit_oid_to_string ()">ggit_oid_to_string</a>                  (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitOId.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GBoxed
+   +----GgitOId
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitOId.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitOId.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitOId-struct"></a><h3>GgitOId</h3>
+<pre class="programlisting">typedef struct _GgitOId GgitOId;</pre>
+<p>
+Represents a unique ID of any object.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-oid-copy"></a><h3>ggit_oid_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           ggit_oid_copy                       (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>);</pre>
+<p>
+Copies <em class="parameter"><code>oid</code></em> into a newly allocated <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>oid</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-oid-free"></a><h3>ggit_oid_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                ggit_oid_free                       (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>);</pre>
+<p>
+Frees <em class="parameter"><code>oid</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>oid</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-oid-new-from-string"></a><h3>ggit_oid_new_from_string ()</h3>
+<pre class="programlisting"><a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           ggit_oid_new_from_string            (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *str</code></em>);</pre>
+<p>
+Parses a hex formatted object id into a <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>str</code></em> :</span></p></td>
+<td>input hex string; must be pointing at the start of
+the hex sequence and have at least the number of bytes
+needed for an oid encoded in hex (40 bytes).</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> on error. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-oid-new-from-raw"></a><h3>ggit_oid_new_from_raw ()</h3>
+<pre class="programlisting"><a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           ggit_oid_new_from_raw               (<em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a> *raw</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-oid-compare"></a><h3>ggit_oid_compare ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                ggit_oid_compare                    (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *a</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *b</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-oid-to-string"></a><h3>ggit_oid_to_string ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             ggit_oid_to_string                  (<em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>);</pre>
+<p>
+Converts <em class="parameter"><code>oid</code></em> into a readable string.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>oid</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a newly allocated string representing <em class="parameter"><code>oid</code></em>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>
