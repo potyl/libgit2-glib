@@ -8,6 +8,7 @@
       <sub name="GgitError" link="libgit2-glib-1.0-GgitError.html"/>
       <sub name="GgitObject" link="GgitObject.html"/>
       <sub name="GgitOId" link="GgitOId.html"/>
+      <sub name="GgitRef" link="GgitRef.html"/>
       <sub name="GgitRepository" link="GgitRepository.html"/>
       <sub name="GgitSignature" link="GgitSignature.html"/>
       <sub name="GgitTag" link="GgitTag.html"/>
@@ -41,6 +42,20 @@
     <keyword type="function" name="ggit_oid_new_from_raw ()" link="GgitOId.html#ggit-oid-new-from-raw"/>
     <keyword type="function" name="ggit_oid_compare ()" link="GgitOId.html#ggit-oid-compare"/>
     <keyword type="function" name="ggit_oid_to_string ()" link="GgitOId.html#ggit-oid-to-string"/>
+    <keyword type="struct" name="GgitRef" link="GgitRef.html#GgitRef-struct"/>
+    <keyword type="enum" name="enum GgitRefType" link="GgitRef.html#GgitRefType"/>
+    <keyword type="function" name="ggit_ref_copy ()" link="GgitRef.html#ggit-ref-copy"/>
+    <keyword type="function" name="ggit_ref_free ()" link="GgitRef.html#ggit-ref-free"/>
+    <keyword type="function" name="ggit_ref_get_oid ()" link="GgitRef.html#ggit-ref-get-oid"/>
+    <keyword type="function" name="ggit_ref_get_target ()" link="GgitRef.html#ggit-ref-get-target"/>
+    <keyword type="function" name="ggit_ref_get_reference_type ()" link="GgitRef.html#ggit-ref-get-reference-type"/>
+    <keyword type="function" name="ggit_ref_get_name ()" link="GgitRef.html#ggit-ref-get-name"/>
+    <keyword type="function" name="ggit_ref_resolve ()" link="GgitRef.html#ggit-ref-resolve"/>
+    <keyword type="function" name="ggit_ref_get_owner ()" link="GgitRef.html#ggit-ref-get-owner"/>
+    <keyword type="function" name="ggit_ref_set_target ()" link="GgitRef.html#ggit-ref-set-target"/>
+    <keyword type="function" name="ggit_ref_set_oid ()" link="GgitRef.html#ggit-ref-set-oid"/>
+    <keyword type="function" name="ggit_ref_rename ()" link="GgitRef.html#ggit-ref-rename"/>
+    <keyword type="function" name="ggit_ref_delete ()" link="GgitRef.html#ggit-ref-delete"/>
     <keyword type="struct" name="GgitRepository" link="GgitRepository.html#GgitRepository-struct"/>
     <keyword type="enum" name="enum GgitRepositoryPathid" link="GgitRepository.html#GgitRepositoryPathid"/>
     <keyword type="function" name="ggit_repository_open ()" link="GgitRepository.html#ggit-repository-open"/>
@@ -102,6 +117,12 @@
     <keyword type="constant" name="GGIT_ERROR_PASSTHROUGH" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-PASSTHROUGH:CAPS"/>
     <keyword type="constant" name="GGIT_ERROR_NOMATCH" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-NOMATCH:CAPS"/>
     <keyword type="constant" name="GGIT_ERROR_SHORTBUFFER" link="libgit2-glib-1.0-GgitError.html#GGIT-ERROR-SHORTBUFFER:CAPS"/>
+    <keyword type="constant" name="GGIT_REF_INVALID" link="GgitRef.html#GGIT-REF-INVALID:CAPS"/>
+    <keyword type="constant" name="GGIT_REF_OID" link="GgitRef.html#GGIT-REF-OID:CAPS"/>
+    <keyword type="constant" name="GGIT_REF_SYMBOLIC" link="GgitRef.html#GGIT-REF-SYMBOLIC:CAPS"/>
+    <keyword type="constant" name="GGIT_REF_PACKED" link="GgitRef.html#GGIT-REF-PACKED:CAPS"/>
+    <keyword type="constant" name="GGIT_REF_HAS_PEEL" link="GgitRef.html#GGIT-REF-HAS-PEEL:CAPS"/>
+    <keyword type="constant" name="GGIT_REF_LISTALL" link="GgitRef.html#GGIT-REF-LISTALL:CAPS"/>
     <keyword type="constant" name="GGIT_REPO_PATH" link="GgitRepository.html#GGIT-REPO-PATH:CAPS"/>
     <keyword type="constant" name="GGIT_REPO_PATH_INDEX" link="GgitRepository.html#GGIT-REPO-PATH-INDEX:CAPS"/>
     <keyword type="constant" name="GGIT_REPO_PATH_ODB" link="GgitRepository.html#GGIT-REPO-PATH-ODB:CAPS"/>

@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GgitRef</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.76.1">
+<link rel="home" href="index.html" title="libgit2-glib Reference Manual">
+<link rel="up" href="rn01.html" title="API reference">
+<link rel="prev" href="GgitOId.html" title="GgitOId">
+<link rel="next" href="GgitRepository.html" title="GgitRepository">
+<meta name="generator" content="GTK-Doc V1.17.1 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="GgitOId.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">libgit2-glib Reference Manual</th>
+<td><a accesskey="n" href="GgitRepository.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts">
+<a href="#GgitRef.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#GgitRef.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#GgitRef.object-hierarchy" class="shortcut">Object Hierarchy</a>
+</td></tr>
+</table>
+<div class="refentry">
+<a name="GgitRef"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="GgitRef.top_of_page"></a>GgitRef</span></h2>
+<p>GgitRef</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="GgitRef.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#include &lt;libgit2-glib/ggit-ref.h&gt;
+
+                    <a class="link" href="GgitRef.html#GgitRef-struct" title="GgitRef">GgitRef</a>;
+enum                <a class="link" href="GgitRef.html#GgitRefType" title="enum GgitRefType">GgitRefType</a>;
+<a class="link" href="GgitRef.html" title="GgitRef"><span class="returnvalue">GgitRef</span></a> *           <a class="link" href="GgitRef.html#ggit-ref-copy" title="ggit_ref_copy ()">ggit_ref_copy</a>                       (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GgitRef.html#ggit-ref-free" title="ggit_ref_free ()">ggit_ref_free</a>                       (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);
+<a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           <a class="link" href="GgitRef.html#ggit-ref-get-oid" title="ggit_ref_get_oid ()">ggit_ref_get_oid</a>                    (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitRef.html#ggit-ref-get-target" title="ggit_ref_get_target ()">ggit_ref_get_target</a>                 (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);
+<a class="link" href="GgitRef.html#GgitRefType" title="enum GgitRefType"><span class="returnvalue">GgitRefType</span></a>         <a class="link" href="GgitRef.html#ggit-ref-get-reference-type" title="ggit_ref_get_reference_type ()">ggit_ref_get_reference_type</a>         (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);
+const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       <a class="link" href="GgitRef.html#ggit-ref-get-name" title="ggit_ref_get_name ()">ggit_ref_get_name</a>                   (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);
+<a class="link" href="GgitRef.html" title="GgitRef"><span class="returnvalue">GgitRef</span></a> *           <a class="link" href="GgitRef.html#ggit-ref-resolve" title="ggit_ref_resolve ()">ggit_ref_resolve</a>                    (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    <a class="link" href="GgitRef.html#ggit-ref-get-owner" title="ggit_ref_get_owner ()">ggit_ref_get_owner</a>                  (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GgitRef.html#ggit-ref-set-target" title="ggit_ref_set_target ()">ggit_ref_set_target</a>                 (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *target</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GgitRef.html#ggit-ref-set-oid" title="ggit_ref_set_oid ()">ggit_ref_set_oid</a>                    (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GgitRef.html#ggit-ref-rename" title="ggit_ref_rename ()">ggit_ref_rename</a>                     (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *new_name</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+<span class="returnvalue">void</span>                <a class="link" href="GgitRef.html#ggit-ref-delete" title="ggit_ref_delete ()">ggit_ref_delete</a>                     (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitRef.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GBoxed
+   +----GgitRef
+</pre>
+</div>
+<div class="refsect1">
+<a name="GgitRef.description"></a><h2>Description</h2>
+</div>
+<div class="refsect1">
+<a name="GgitRef.details"></a><h2>Details</h2>
+<div class="refsect2">
+<a name="GgitRef-struct"></a><h3>GgitRef</h3>
+<pre class="programlisting">typedef struct _GgitRef GgitRef;</pre>
+<p>
+Reprensents a git reference.
+</p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="GgitRefType"></a><h3>enum GgitRefType</h3>
+<pre class="programlisting">typedef enum
+{
+	GGIT_REF_INVALID = 0,
+	GGIT_REF_OID = 1,
+	GGIT_REF_SYMBOLIC = 2,
+	GGIT_REF_PACKED = 4,
+	GGIT_REF_HAS_PEEL = 8,
+	GGIT_REF_LISTALL = GGIT_REF_OID | GGIT_REF_SYMBOLIC | GGIT_REF_PACKED
+} GgitRefType;
+</pre>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><a name="GGIT-REF-INVALID:CAPS"></a><span class="term"><code class="literal">GGIT_REF_INVALID</code></span></p></td>
+<td>An invalid reference.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REF-OID:CAPS"></a><span class="term"><code class="literal">GGIT_REF_OID</code></span></p></td>
+<td>A reference which points at an object id.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REF-SYMBOLIC:CAPS"></a><span class="term"><code class="literal">GGIT_REF_SYMBOLIC</code></span></p></td>
+<td>A reference which points at another reference.
+</td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REF-PACKED:CAPS"></a><span class="term"><code class="literal">GGIT_REF_PACKED</code></span></p></td>
+<td></td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REF-HAS-PEEL:CAPS"></a><span class="term"><code class="literal">GGIT_REF_HAS_PEEL</code></span></p></td>
+<td></td>
+</tr>
+<tr>
+<td><p><a name="GGIT-REF-LISTALL:CAPS"></a><span class="term"><code class="literal">GGIT_REF_LISTALL</code></span></p></td>
+<td>All references types.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-copy"></a><h3>ggit_ref_copy ()</h3>
+<pre class="programlisting"><a class="link" href="GgitRef.html" title="GgitRef"><span class="returnvalue">GgitRef</span></a> *           ggit_ref_copy                       (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);</pre>
+<p>
+Creates a copy of <em class="parameter"><code>ref</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new copy of <em class="parameter"><code>ref</code></em>. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-free"></a><h3>ggit_ref_free ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                ggit_ref_free                       (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);</pre>
+<p>
+Fress <em class="parameter"><code>ref</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-get-oid"></a><h3>ggit_ref_get_oid ()</h3>
+<pre class="programlisting"><a class="link" href="GgitOId.html" title="GgitOId"><span class="returnvalue">GgitOId</span></a> *           ggit_ref_get_oid                    (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);</pre>
+<p>
+Get the OID pointed to by a reference.
+Only available if the reference is direct (i.e. not symbolic).
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>a new oid if available, <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> otherwise. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-get-target"></a><h3>ggit_ref_get_target ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_ref_get_target                 (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);</pre>
+<p>
+Gets the full name to the reference pointed by this reference.
+Only available if the reference is symbolic.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the name if available, <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> otherwise.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-get-reference-type"></a><h3>ggit_ref_get_reference_type ()</h3>
+<pre class="programlisting"><a class="link" href="GgitRef.html#GgitRefType" title="enum GgitRefType"><span class="returnvalue">GgitRefType</span></a>         ggit_ref_get_reference_type         (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-get-name"></a><h3>ggit_ref_get_name ()</h3>
+<pre class="programlisting">const <a href="../glib/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       ggit_ref_get_name                   (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);</pre>
+<p>
+Gets the full name of <em class="parameter"><code>ref</code></em>.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the full name of a reference.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-resolve"></a><h3>ggit_ref_resolve ()</h3>
+<pre class="programlisting"><a class="link" href="GgitRef.html" title="GgitRef"><span class="returnvalue">GgitRef</span></a> *           ggit_ref_resolve                    (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Resolves a symbolic reference.
+</p>
+<p>
+This method iteratively peels a symbolic reference
+until it resolves to a direct reference to an OID.
+</p>
+<p>
+If a direct reference is passed as an argument,
+that reference is returned immediately.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the resolved reference to the peeled one. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-get-owner"></a><h3>ggit_ref_get_owner ()</h3>
+<pre class="programlisting"><a class="link" href="GgitRepository.html" title="GgitRepository"><span class="returnvalue">GgitRepository</span></a> *    ggit_ref_get_owner                  (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>);</pre>
+<p>
+Gets the repository where <em class="parameter"><code>ref</code></em> resides.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>the repository where a reference resides. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-set-target"></a><h3>ggit_ref_set_target ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                ggit_ref_set_target                 (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *target</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Sets the symbolic target of <em class="parameter"><code>ref</code></em>.
+</p>
+<p>
+The reference must be a symbolic reference, otherwise
+this method will fail.
+</p>
+<p>
+The reference will be automatically updated in
+memory and on disk.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>target</code></em> :</span></p></td>
+<td>The new target for the reference.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-set-oid"></a><h3>ggit_ref_set_oid ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                ggit_ref_set_oid                    (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code><a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a> *oid</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Sets the OID target of <em class="parameter"><code>ref</code></em>.
+</p>
+<p>
+The reference must be a direct reference, otherwise
+this method will fail.
+</p>
+<p>
+The reference will be automatically updated in
+memory and on disk.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>oid</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitOId.html" title="GgitOId"><span class="type">GgitOId</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-rename"></a><h3>ggit_ref_rename ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                ggit_ref_rename                     (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *new_name</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> force</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Renames <em class="parameter"><code>ref</code></em>.
+</p>
+<p>
+This method works for both direct and symbolic references.
+The new name will be checked for validity and may be
+modified into a normalized form.
+</p>
+<p>
+The refernece will be immediately renamed in-memory
+and on disk.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_name</code></em> :</span></p></td>
+<td>the new name.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>force</code></em> :</span></p></td>
+<td>
+<a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> to force the renaming.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="ggit-ref-delete"></a><h3>ggit_ref_delete ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>                ggit_ref_delete                     (<em class="parameter"><code><a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a> *ref</code></em>,
+                                                         <em class="parameter"><code><a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
+<p>
+Deletes <em class="parameter"><code>ref</code></em>.
+</p>
+<p>
+This method works for both direct and symbolic references.
+</p>
+<p>
+The reference will be immediately removed on disk and from
+memory. The given reference pointer will no longer be valid.
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>ref</code></em> :</span></p></td>
+<td>a <a class="link" href="GgitRef.html" title="GgitRef"><span class="type">GgitRef</span></a>.</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>a <a href="../glib/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.17.1</div>
+</body>
+</html>
